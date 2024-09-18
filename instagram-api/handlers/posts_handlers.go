@@ -3,7 +3,7 @@ package handlers
 import (
     "net/http"
     "github.com/gin-gonic/gin"
-    "github.com/iamaditya21/instagram-api/database"
+    "github.com/iamaditya21/instagram-api/instagram-api/database"
 )
 
 func CreatePost(c *gin.Context) {

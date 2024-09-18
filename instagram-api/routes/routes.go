@@ -2,7 +2,7 @@ package routes
 
 import (
     "github.com/gin-gonic/gin"
-    "github.com/iamaditya21/instagram-api/handlers"
+    "github.com/iamaditya21/instagram-api/instagram-api/handlers"
 )
 
 func SetupRouter() *gin.Engine {

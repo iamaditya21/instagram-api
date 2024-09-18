@@ -1,4 +1,4 @@
-module my-go-project
+module instagram-api 
 
 go 1.23.1
 

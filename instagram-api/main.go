@@ -2,8 +2,8 @@ package main
 
 import (
     "net/http"
-    "github.com/iamaditya21/instagram-api/database"
-    "github.com/iamaditya21/instagram-api/routes"
+    "github.com/iamaditya21/instagram-api/instagram-api/database"
+    "github.com/iamaditya21/instagram-api/instagram-api/routes"
     "github.com/gorilla/mux"
 )
 
