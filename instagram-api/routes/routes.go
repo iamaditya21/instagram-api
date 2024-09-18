@@ -1,18 +1,18 @@
 package routes
 
 import (
-    "github.com/gin-gonic/gin"
-    "github.com/iamaditya21/instagram-api/instagram-api/handlers"
+    "github.com/gorilla/mux"
+    "github.com/iamaditya21/instagram-api/instagram-api/handlers" // Update with your actual path
 )
 
-func SetupRouter() *gin.Engine {
-    r := gin.Default()
+func UserRoutes(router *mux.Router) {
+    router.HandleFunc("/users", handlers.createUser).Methods("POST")
+    router.HandleFunc("/users/{id}", handlers.getUser).Methods("GET")
+    router.HandleFunc("/users", handlers.getUsers).Methods("GET")
+}
 
-    r.POST("/users", handlers.CreateUser)
-    r.GET("/users/:id", handlers.GetUser)
-    r.POST("/posts", handlers.CreatePost)
-    r.GET("/posts/:id", handlers.GetPost)
-    r.GET("/posts/users/:id", handlers.ListUserPosts)
-
-    return r
+func PostRoutes(router *mux.Router) {
+    router.HandleFunc("/posts", handlers.createPost).Methods("POST")
+    router.HandleFunc("/posts/{id}", handlers.getPost).Methods("GET")
+    router.HandleFunc("/posts/users/{id}", handlers.getUserPosts).Methods("GET")
 }

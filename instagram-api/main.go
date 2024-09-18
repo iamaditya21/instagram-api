@@ -1,18 +1,20 @@
 package main
 
 import (
+    "log"
     "net/http"
-    "github.com/iamaditya21/instagram-api/instagram-api/database"
-    "github.com/iamaditya21/instagram-api/instagram-api/routes"
+
     "github.com/gorilla/mux"
+    "github.com/iamaditya21/instagram-api/instagram-api/routes" // Update with your actual path
 )
 
 func main() {
-    database.InitDB() // Initialize the database connection
-    router := mux.NewRouter()
-    
-    routes.UserRoutes(router)
-    routes.PostRoutes(router)
+    r := mux.NewRouter()
 
-    http.ListenAndServe(":8000", router)
+    // Set up routes
+    routes.UserRoutes(r)
+    routes.PostRoutes(r)
+
+    // Start server
+    log.Fatal(http.ListenAndServe(":8000", r))
 }
