@@ -4,7 +4,7 @@ import (
     "net/http"
     "github.com/gin-gonic/gin"
     "golang.org/x/crypto/bcrypt"
-    "github.com/yourusername/instagram-api/database"
+    "github.com/iamaditya21/instagram-api/instagram-api/database"
 )
 
 func CreateUser(c *gin.Context) {
